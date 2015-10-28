@@ -38,23 +38,10 @@ document.addEventListener("mouseup", function() {
 
 //ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-// save canvas image button
-document.getElementById("button").addEventListener("click", function(){
-
-	var canvas = document.getElementById("paper");
-	var saveContext=document.getElementById("paper2").getContext("2d");
-	var base_image = new Image();
-
-	saveContext.mozImageSmoothingEnabled = false;
-	saveContext.webkitImageSmoothingEnabled = false;
-	saveContext.msImageSmoothingEnabled = false;
-	saveContext.imageSmoothingEnabled = false;
-
-	// save canvas image as data url (png format by default)
-    base_image.src = canvas.toDataURL("image/png");
-
-	saveContext.drawImage(base_image, 0, 0, 500, 500);
-
+// download canvas image
+document.getElementById('download').addEventListener('click', function() {
+	this.download = "test.png";
+	this.href = document.getElementById("paper").toDataURL("image/png");
 }, false);
 
 })();
