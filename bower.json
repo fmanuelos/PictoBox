@@ -1,0 +1,17 @@
+{
+  "name": "pictobox",
+  "version": "0.0.1",
+  "homepage": "https://github.com/fmanuelos/pictobox",
+  "authors": [
+    "fmanuelos <fmanuelos@gmail.com>"
+  ],
+  "description": "Paint application using Javascript",
+  "license": "MIT",
+  "dependencies": {
+    "font-awesome": "fontawesome#~4.4.0",
+    "normalize-css": "normalize.css#~3.0.3",
+    "bootstrap": "3.3.4",
+    "components-font-awesome": "~4.4.0",
+    "bootswatch-dist": "3.3.4-flatly"
+  }
+}

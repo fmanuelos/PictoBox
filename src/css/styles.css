@@ -1,21 +1,8 @@
-/*-------------------------
-	Simple reset
---------------------------*/
-
-*{
-	margin:0;
-	padding:0;
-}
-
-/*-------------------------
-	General Styles
---------------------------*/
-
-html{
+html {
 	overflow:hidden;
 }
 
-body{
+body {
 	font:14px/1.3 'Segoe UI',Arial, sans-serif;
 	color:#444;
 }
@@ -29,7 +16,7 @@ section, footer, header{
 	display: block;
 }
 
-#paper {
+.paper {
 	cursor: url(../img/pointer.png), auto;
 	background-color: #fff;
     border: 3px solid #dce4ec;
@@ -48,13 +35,10 @@ section, footer, header{
     margin: 20px 0;
 }
 
-.fa-xs {
+.fa-sm {
 	font-size: 12px;
 }
 
 .clearfix {
 	margin-bottom: 20px;
 }
-/*#download{
-
-}*/

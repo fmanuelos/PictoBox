@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>PictoBox Demo</title>
+
+		<!--[if lt IE 9]>
+		  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- bower:css -->
+		<link rel="stylesheet" href="lib/normalize-css/normalize.css" />
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="lib/components-font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="lib/bootswatch-dist/css/bootstrap.css" />
+		<!-- endbower -->
+
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
+
+	<body>
+		<!--[if lt IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">PictoBox Demo</a>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-2">
+					<canvas id="paper" class="paper" width="500" height="500">
+						Your browser needs to support canvas for this to work!
+					</canvas>
+				</div>
+				<div class="col-lg-4">
+						<h3>Options</h3>
+						<hr>
+						<div class="btn-group">
+							<button type="button" id="small-pencil" class="btn btn-primary">
+								<i class="fa fa-circle fa-sm"></i>
+							</button>
+							<button type="button" id="normal-pencil" class="btn btn-primary">
+								<i class="fa fa-circle"></i>
+							</button>
+							<button type="button" id="big-pencil" class="btn btn-primary">
+								<i class="fa fa-circle fa-lg"></i>
+							</button>
+						</div>
+						<div class="clearfix"></div>
+						<div class="btn-group">
+							<button type="button" id="normal-eraser" class="btn btn-default" title="eraser">
+								<i class="fa fa-eraser fa-sm"></i>
+							</button>
+							<button type="button" id="big-eraser" class="btn btn-default" title="eraser">
+								<i class="fa fa-eraser"></i>
+							</button>
+						</div>
+						<button type="button" id="trash" class="btn btn-danger" title="delete">
+							<i class="fa fa-trash-o fa-lg"></i>
+						</button>
+						<div class="clearfix"></div>
+						<a id="download" class="btn btn-success btn-lg" title="download">
+							<i class="fa fa-download"></i> Download
+						</a>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<p class="text-muted">Paint application using Javascript</p>
+			</div>
+		</footer>
+
+		<audio id="audio" src="./audio/pencil.mp3" style="display:none"></audio>
+
+        <!-- bower:js -->
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="lib/bootswatch-dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+
+		<script src="./js/script.js"></script>
+    </body>
+</html>
