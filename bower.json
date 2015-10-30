@@ -10,7 +10,6 @@
   "dependencies": {
     "font-awesome": "fontawesome#~4.4.0",
     "normalize-css": "normalize.css#~3.0.3",
-    "bootstrap": "3.3.4",
     "components-font-awesome": "~4.4.0",
     "bootswatch-dist": "3.3.4-flatly"
   }

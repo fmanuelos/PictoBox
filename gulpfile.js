@@ -1,6 +1,7 @@
-var gulp = require('gulp'),
-  connect = require('gulp-connect');
- 
+var	gulp    = require('gulp'),
+	connect = require('gulp-connect'),
+	$       = require('gulp-load-plugins')();
+
 gulp.task('connect', function() {
 	connect.server({
 		root: 'src',
@@ -33,9 +34,41 @@ gulp.task('watch', function () {
 
 gulp.task('wiredep', function() {
 	var wiredep = require('wiredep').stream;
-    gulp.src('./src/*.html')
-        .pipe(wiredep({}))
-        .pipe(gulp.dest('./src'));
+
+	gulp.src('./src/*.html')
+		.pipe(wiredep({}))
+		.pipe(gulp.dest('./src'));
+});
+
+gulp.task('useref', function () {
+	var assets = $.useref.assets();
+
+	gulp.src('./src/*.html')
+		.pipe(assets)
+		.pipe($.if('*.js', $.uglify()))
+		.pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
+		.pipe(assets.restore())
+		.pipe($.useref())
+		.pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy', function () {
+
+	gulp.src('./src/*.{ico,png,txt}')
+		.pipe(gulp.dest('dist/'));
+
+	gulp.src('./src/lib/font-awesome/fonts/*')
+		.pipe(gulp.dest('dist/fonts'));
+
+	gulp.src('./src/audio/*')
+		.pipe(gulp.dest('dist/audio'));
+
+	gulp.src('./src/img/*')
+		.pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('default', ['connect', 'watch']);
+
+gulp.task('build', ['copy', 'useref']);
+
