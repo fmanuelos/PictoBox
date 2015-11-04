@@ -7,7 +7,8 @@ if(!('getContext' in document.createElement('canvas'))){
 }
 
 // setup canvas and audio
-var ctx = document.getElementById("paper").getContext("2d");
+var canvas = document.getElementById("paper");
+var ctx = canvas.getContext("2d");
 var audio = document.getElementById("audio");
 
 ctx.lineCap = "round";
@@ -27,32 +28,53 @@ document.getElementById("small-pencil").addEventListener("click", function() {
 	ctx.lineWidth = 1;
 	ctx.strokeStyle = "#000";
 	erasing = false;
+	canvas.classList.remove("eraser-cursor");
 }, false);
 
 document.getElementById("normal-pencil").addEventListener("click", function() {
 	ctx.lineWidth = 3;
 	ctx.strokeStyle = "#000";
 	erasing = false;
+	canvas.classList.remove("eraser-cursor");
 }, false);
 
 document.getElementById("big-pencil").addEventListener("click", function() {
 	ctx.lineWidth = 5;
 	ctx.strokeStyle = "#000";
 	erasing = false;
+	canvas.classList.remove("eraser-cursor");
 }, false);
 
 
 // eraser diferent sizes
+document.getElementById("small-eraser").addEventListener("click", function() {
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = "#fff";
+	erasing = true;
+
+	if (canvas.className === "paper") {
+		canvas.classList.add("eraser-cursor");
+	}
+}, false);
+
 document.getElementById("normal-eraser").addEventListener("click", function() {
 	ctx.lineWidth = 3;
 	ctx.strokeStyle = "#fff";
 	erasing = true;
+
+	if (canvas.className === "paper") {
+		canvas.classList.add("eraser-cursor");
+	}
 }, false);
 
 document.getElementById("big-eraser").addEventListener("click", function() {
 	ctx.lineWidth = 5;
 	ctx.strokeStyle = "#fff";
 	erasing = true;
+
+	if (canvas.className === "paper") {
+		canvas.classList.add("eraser-cursor");
+	}
 }, false);
 
 
@@ -61,13 +83,13 @@ document.getElementById("paper").addEventListener("mousedown", function(e) {
 	drawing = true;
 	ctx.beginPath();
 	//ctx.moveTo(e.pageX,e.pageY);
-	ctx.moveTo(e.offsetX,e.offsetY);
+	ctx.moveTo(e.offsetX-3,e.offsetY-3);
 }, false);
 
-document.addEventListener("mousemove", function(e) {
+document.getElementById("paper").addEventListener("mousemove", function(e) {
 	if (drawing){
 		//ctx.lineTo(e.pageX,e.pageY);
-		ctx.lineTo(e.offsetX,e.offsetY);
+		ctx.lineTo(e.offsetX-3,e.offsetY-3);
 		ctx.stroke();
 
 		//play pencil sound
@@ -79,7 +101,11 @@ document.addEventListener("mousemove", function(e) {
 	}
 }, false);
 
-document.addEventListener("mouseup", function() {
+document.getElementById("paper").addEventListener("mouseup", function() {
+	drawing = false;
+}, false);
+
+document.getElementById("paper").addEventListener("mouseleave", function() {
 	drawing = false;
 }, false);
 
@@ -89,7 +115,7 @@ document.getElementById("trash").addEventListener("click", function(e) {
 	ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.width);
 	ctx.stroke();
 	//play trash sound
-	audio.play();
+	//audio.play();
 }, false);
 
 

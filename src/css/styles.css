@@ -17,10 +17,18 @@ section, footer, header{
 }
 
 .paper {
-	cursor: url(../img/pointer.png), auto;
+	cursor: url(../img/pencil-cursor.png), auto;
 	background-color: #fff;
-    border: 3px solid #dce4ec;
+	border: 3px solid #dce4ec;
 	border-radius: 4px;
+}
+
+/*.pencil-cursor {
+	cursor: url(../img/pencil-cursor.png), auto;
+}*/
+
+.eraser-cursor {
+	cursor: url(../img/eraser-cursor.png), auto;
 }
 
 .footer {
@@ -32,7 +40,7 @@ section, footer, header{
 }
 
 .container .text-muted {
-    margin: 20px 0;
+	margin: 20px 0;
 }
 
 .fa-sm {
