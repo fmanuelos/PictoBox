@@ -17,18 +17,14 @@ section, footer, header{
 }
 
 .paper {
-	cursor: url(../img/pencil-cursor.png), auto;
+	cursor: url(../images/pencil-cursor.png), auto;
 	background-color: #fff;
 	border: 3px solid #dce4ec;
 	border-radius: 4px;
 }
 
-/*.pencil-cursor {
-	cursor: url(../img/pencil-cursor.png), auto;
-}*/
-
 .eraser-cursor {
-	cursor: url(../img/eraser-cursor.png), auto;
+	cursor: url(../images/eraser-cursor.png), auto;
 }
 
 .footer {

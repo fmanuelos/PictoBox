@@ -8,9 +8,9 @@
   "description": "Paint application using Javascript",
   "license": "MIT",
   "dependencies": {
-    "font-awesome": "fontawesome#~4.4.0",
     "normalize-css": "normalize.css#~3.0.3",
     "components-font-awesome": "~4.4.0",
-    "bootswatch-dist": "3.3.4-flatly"
+    "bootswatch-dist": "3.3.4-flatly",
+    "modernizr": "~2.8.3"
   }
 }

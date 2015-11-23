@@ -1,4 +1,5 @@
 (function(){
+'use strict';
 
 // This demo depends on the canvas element
 if(!('getContext' in document.createElement('canvas'))){
